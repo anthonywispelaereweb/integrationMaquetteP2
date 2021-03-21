@@ -1,0 +1,144 @@
+@import "./variables.scss";
+
+@font-face {
+    font-family: "Raleway";
+    src: url("./../assets/fonts/static/Raleway-Regular.ttf") format("truetype");
+}
+html {
+    font-size: 10px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", Arial;
+}
+
+/* Gestion du heder */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+}
+.header-ctn-logo {
+    width: 60%;
+}
+.header-logo {
+    padding-left: 3rem;
+}
+
+/* Gestion du menu */
+
+.menu {
+    width: 40%;
+    display: flex;
+    align-self: flex-start;
+}
+
+.menu-list {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list-item {
+    list-style: none;
+    width: 33%;
+    text-align: center;
+    align-self: center;
+    min-height: 3rem;
+}
+
+.menu-list-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    padding: 1rem;
+}
+
+.menu-list-link:active {
+    color: $activeColor;
+}
+.menu-list .inscription {
+    font-weight: bold;
+}
+
+.menu-list-item:hover > .liseret {
+    box-shadow: inset 0px 4px 0px 0px rgba(96, 159, 253, 1);
+}
+
+.liseret {
+    box-shadow: inset 0px 4px 0px 0px rgb(255, 255, 255);
+    display: block;
+    width: 100%;
+    height: 1px;
+}
+
+.menu-list > .active > .liseret {
+    box-shadow: inset 0px 4px 0px 0px rgba(96, 159, 253, 1);
+    display: block;
+    width: 100%;
+    height: 1px;
+}
+
+.menu-list > .active > .menu-list-link,
+.menu-list:hover > .menu-list-item > .active,
+.menu-list-item:hover,
+.menu-mobile > .menu-list > .active > .menu-list-link {
+    font-weight: bold;
+}
+/* Gestion du menu mobile */
+.menu-mobile {
+    display: none;
+}
+/* Partie alignement-bloc */
+.main-bloc {
+    padding: 2rem;
+}
+
+/* Partie search */
+.search {
+    &-ctn {
+        width: 100%;
+    }
+    &-title {
+        color: $black;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 0;
+        &-sub {
+            color: $grey;
+            margin-top: 0;
+
+        }
+    }
+}
+/* Partie informations */
+.informations {
+    width: 100%;
+    padding: 3rem;
+}
+
+/* Partie hebergement */
+.hebergement-ctn {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    /* Gestion du menu mobile */
+    .menu .hebergement,
+    .menu .activite {
+        display: none;
+    }
+
+    .menu .inscription {
+        width: 100%;
+    }
+    .menu-mobile {
+        display: flex;
+        width: 100%;
+    }
+    .menu-mobile .menu-list-item {
+        width: 50%;
+    }
+}
